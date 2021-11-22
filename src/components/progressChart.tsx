@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 import { ResponsiveContainer, Tooltip, CartesianGrid, LineChart, XAxis, YAxis, Line } from "recharts";
 import {DateTime, Interval} from "luxon"
 
