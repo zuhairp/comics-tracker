@@ -42,7 +42,7 @@ const Stats = ({start, end, total, read}: StatsProps) => {
         <div className="statsContainer">
             <Stat name="Issues Read" value={read} />
             <Stat name="Issues Remaining" value={total - read} />
-            <Stat name="Daily Target" value={target} />
+            <Stat name="Today's Target" value={target} />
             <Stat name="Days Remaining" value={daysRemaining} />
         </div>
     )
