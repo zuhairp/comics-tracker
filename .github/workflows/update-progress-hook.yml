@@ -1,0 +1,34 @@
+name: Update progress
+
+on:
+  repository_dispatch:
+    types: ["update-progress"]
+  
+
+jobs:
+  write_and_commit_job:
+    if: github.event_name == 'update-progress'
+    runs-on: ubuntu-latest
+    name: "Update progress in 2021.yml"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Edit data
+        run: |
+          echo "  - date: ${{ github.event.client_payload.date }}" >> data\2021.yml
+          echo "    count: ${{ github.event.client_payload.count }}" >> data\2021.yml
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Updating progress for ${{ github.event.client_payload.date }}" -a
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+        
