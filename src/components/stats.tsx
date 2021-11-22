@@ -20,28 +20,30 @@ const Stat = ({name, value}) => {
 const Stats = ({start, end, total, read}: StatsProps) => {
     const today = DateTime.now().set({hour: 0, minute: 0})
 
-    let paceStart = undefined;
-    let paceEnd = undefined;
+    let daysRemaining = Math.round(end.diff(today, 'days').days);
+    let daysIn = Math.round(today.diff(start, 'days').days);
+    let totalDays = Math.round(end.diff(start, 'days').days);
 
-    if (today > end) {
-        [paceStart, paceEnd ] = [end.plus({days:1}), today];
-    } else {
-        paceStart = today > start ? today : start;
-        paceEnd = end.plus({days: 1});
+    let target = undefined;
+    if (daysIn < 0) {
+        target = "-"
+        daysRemaining = Math.round(end.diff(start, 'days').days)
+    } 
+    else if (daysRemaining < 0) {
+        target = (read == total) ? "\u{1F389}" : "\u{1F622}";
+        daysRemaining = 0;
     }
-
-    let interval = Interval.fromDateTimes(paceStart, end.plus({days:1}))
-    let days = Math.floor(interval.length('days').valueOf());
-    
-    let invalidPace = (read == total) ? "\u{1F389}" : "\u{1F622}"
-    let pace = days > 0 ? ((total - read) / days).toFixed(1) : invalidPace;
+    else {
+        let avg = total / totalDays;
+        target = Math.round((daysIn+1) * avg);
+    }
 
     return (
         <div className="statsContainer">
             <Stat name="Issues Read" value={read} />
             <Stat name="Issues Remaining" value={total - read} />
-            <Stat name="Days Remaining" value={days} />
-            <Stat name="Daily Pace Needed" value={pace} />
+            <Stat name="Daily Target" value={target} />
+            <Stat name="Days Remaining" value={daysRemaining} />
         </div>
     )
 }
