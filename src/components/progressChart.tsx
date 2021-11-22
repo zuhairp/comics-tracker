@@ -61,7 +61,10 @@ const ProgressChart = ({start, end, total, progress}: ProgressChartProps) => {
                 <XAxis 
                     dataKey="time"
                     tickFormatter = {tickFormatter} />
-                <YAxis label={{value:"Total # of Issues Read", angle: -90, position: 'insideLeft', style:{fill: 'gray', textAnchor: 'middle'}}}/>
+                <YAxis 
+                    label={{value:"Total # of Issues Read", angle: -90, position: 'insideLeft', style:{fill: 'gray', textAnchor: 'middle'}}}
+                    type="number"
+                    domain={[0, total]}/>
                 <Line 
                     dataKey="target" 
                     dot={false}
