@@ -7,7 +7,6 @@ on:
 
 jobs:
   write_and_commit_job:
-    if: github.event.event_type == 'update-progress'
     runs-on: ubuntu-latest
     name: "Update progress in 2021.yml"
     steps:
