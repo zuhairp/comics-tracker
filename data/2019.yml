@@ -1,0 +1,123 @@
+year: 2019
+title: 1999 to Avengers Dissassembled
+start: 2019-01-01
+end: 2019-12-31
+total: 1000
+note: "Progress only tracked weekly"
+
+progress:
+  - date: 2019-01-07
+    count: 12
+  - date: 2019-01-14
+    count: 42
+  - date: 2019-01-21
+    count: 59
+  - date: 2019-01-28
+    count: 84
+
+  - date: 2019-02-04
+    count: 106
+  - date: 2019-02-11
+    count: 106
+  - date: 2019-02-18
+    count: 128
+  - date: 2019-02-25
+    count: 131
+
+  - date: 2019-03-04
+    count: 134
+  - date: 2019-03-11
+    count: 212
+  - date: 2019-03-18
+    count: 212
+  - date: 2019-03-25
+    count: 212
+
+  - date: 2019-04-01
+    count: 212
+  - date: 2019-04-08
+    count: 212
+  - date: 2019-04-15
+    count: 212
+  - date: 2019-04-22
+    count: 212
+  - date: 2019-04-29
+    count: 212
+
+  - date: 2019-05-06
+    count: 269
+  - date: 2019-05-13
+    count: 319
+  - date: 2019-05-20
+    count: 334
+  - date: 2019-05-27
+    count: 334
+
+  - date: 2019-06-03
+    count: 334
+  - date: 2019-06-10
+    count: 334
+  - date: 2019-06-17
+    count: 334
+  - date: 2019-06-24
+    count: 334
+
+  - date: 2019-07-01
+    count: 334
+  - date: 2019-07-08
+    count: 334
+  - date: 2019-07-15
+    count: 334
+  - date: 2019-07-22
+    count: 368
+  - date: 2019-07-29
+    count: 464
+
+  - date: 2019-08-05
+    count: 549
+  - date: 2019-08-12
+    count: 553
+  - date: 2019-08-19
+    count: 596
+  - date: 2019-08-26
+    count: 661
+
+  - date: 2019-09-02
+    count: 669
+  - date: 2019-09-09
+    count: 672
+  - date: 2019-09-16
+    count: 721
+  - date: 2019-09-23
+    count: 745
+  - date: 2019-09-30
+    count: 761
+
+  - date: 2019-10-07
+    count: 798
+  - date: 2019-10-14
+    count: 816
+  - date: 2019-10-21
+    count: 845
+  - date: 2019-10-28
+    count: 865
+
+  - date: 2019-11-04
+    count: 876
+  - date: 2019-11-11
+    count: 886
+  - date: 2019-11-18
+    count: 905
+  - date: 2019-11-25
+    count: 925
+    
+  - date: 2019-12-02
+    count: 906
+  - date: 2019-12-09
+    count: 921
+  - date: 2019-12-16
+    count: 921
+  - date: 2019-12-23
+    count: 921
+  - date: 2019-12-30
+    count: 921

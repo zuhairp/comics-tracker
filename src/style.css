@@ -1,0 +1,128 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;    
+}
+
+body {
+    margin: 1% 20%;
+}
+
+#header {
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    margin-bottom: 20px;
+}
+
+#siteTitle {
+    font-size: 2.5em;
+}
+
+#links > .link > a {
+    color: #38d1ff;
+    text-decoration: none; 
+}
+
+#links > .link > a:visited {
+    color: #38d1ff;
+}
+
+#links > .link {
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+#links > .about {
+    margin-left: 10px;
+}
+
+#explanation {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#content {
+    justify-content: center;
+    flex-flow: column wrap; 
+    align-items: center;
+    align-content: center;
+    display: flex;
+}
+
+#title {
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#readingPeriod {
+    font-size:  1.4em;
+    text-align: center;
+    
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+#chart {
+    width: 100%;
+}
+
+.statsContainer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0px;
+    row-gap:20px;
+}
+
+/* .statsRow {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: center;
+} */
+
+.singleStatContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.singleStatName {
+    color: gray;
+    font-size: 1.1em;
+}
+
+.singleStatValue {
+    font-size: 2.3em;
+}
+
+
+@media screen and (max-device-width: 550px){
+    body {
+        margin: 0;
+    }
+
+   #header {
+       justify-content: center;
+   } 
+
+   #siteTitle {
+       font-size: 1.3em;
+   }
+
+   #time {
+       font-size: 1em;
+   }
+}

@@ -1,0 +1,34 @@
+year: 2020
+title: Pre House of M to Civil War
+start: 2020-08-10
+end: 2021-05-05
+total: 800
+note: Progress only partially tracked. Data estimated
+
+progress:
+  - date: 2020-08-10
+    count: 16
+  - date: 2020-08-17
+    count: 24
+  - date: 2020-08-24
+    count: 80
+  - date: 2020-08-31
+    count: 143
+
+  - date: 2020-09-07
+    count: 192
+  - date: 2020-09-14
+    count: 246
+  - date: 2020-09-21
+    count: 302
+  - date: 2020-09-28
+    count: 339
+
+  - date: 2020-10-05
+    count: 420
+  - date: 2020-10-12
+    count: 586
+  - date: 2020-01-05
+    count: 606
+  - date: 2021-05-05
+    count: 800

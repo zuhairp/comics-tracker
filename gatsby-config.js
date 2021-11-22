@@ -3,5 +3,17 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "Zuhair's Earth-616 Progress",
   },
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data`,
+        name: `data`
+      }
+    },
+
+    {
+      resolve: `gatsby-transformer-yaml`,
+    }
+  ],
 };
