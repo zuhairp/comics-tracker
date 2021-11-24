@@ -37,6 +37,9 @@ jobs:
     needs: write_and_commit_job
     name: Build and Deploy Job
     steps:
+      - name: Sleep 30 seconds to get latest commit
+        run: |
+          sleep 30s
       - uses: actions/checkout@v2
         with:
           submodules: true
