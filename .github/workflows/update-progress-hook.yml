@@ -16,6 +16,8 @@ jobs:
           fetch-depth: 0
       - name: Edit data
         run: |
+          npm install js-yaml
+          npm install luxon
           node update-data.js 2021 ${{ github.event.client_payload.date }} ${{ github.event.client_payload.count }}
 
       - name: Commit changes
