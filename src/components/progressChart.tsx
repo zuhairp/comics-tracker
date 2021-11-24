@@ -21,7 +21,7 @@ interface ProgressChartProps {
 }
 
 const ProgressChart = ({start, end, total, progress}: ProgressChartProps) => {
-    let interval = Interval.fromDateTimes(start, end);
+    let interval = Interval.fromDateTimes(start, end.plus({days: 1}));
 
     let pace = total / (interval.length('days'));
 

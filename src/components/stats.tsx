@@ -22,7 +22,7 @@ const Stats = ({start, end, total, read}: StatsProps) => {
 
     let daysRemaining = Math.round(end.diff(today, 'days').days);
     let daysIn = Math.round(today.diff(start, 'days').days);
-    let totalDays = Math.round(end.diff(start, 'days').days);
+    let totalDays = Math.round(end.diff(start, 'days').days)+1;
 
     let target = undefined;
     if (daysIn < 0) {
