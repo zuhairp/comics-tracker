@@ -16,8 +16,7 @@ jobs:
           fetch-depth: 0
       - name: Edit data
         run: |
-          echo "  - date: ${{ github.event.client_payload.date }}" >> data/2021.yml
-          echo "    count: ${{ github.event.client_payload.count }}" >> data/2021.yml
+          node update-data.js 2021 ${{ github.event.client_payload.date }} ${{ github.event.client_payload.count }}
 
       - name: Commit changes
         run: |
