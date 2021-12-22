@@ -29,21 +29,28 @@ const ProgressChart = ({start, end, total, progress}: ProgressChartProps) => {
     let progressIndex = -1;
     let i = 0;
     let today = DateTime.now();
+    let yesterdaysProgress = 0;
     for (let d = interval.start; d < interval.end; d = d.plus({days: 1}))
     {
         const time = d.valueOf();
         if (progress[progressIndex + 1] && time >= progress[progressIndex + 1].time) {
             progressIndex += 1;
         }
+        
+        const todaysProgress = progress[progressIndex].count;
+
+        const done = todaysProgress >= total && yesterdaysProgress >= total;
+        
         data.push({
             time,
             target: Math.round(pace * (i+1)),
-            actual: d <= today? 
+            actual: d <= today && !done? 
                         progressIndex == -1 ? 0 : progress[progressIndex].count
                         : null
         })
 
         i++;
+        yesterdaysProgress = todaysProgress;
     }
 
     const tickFormatter = time => {
