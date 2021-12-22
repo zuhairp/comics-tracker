@@ -37,7 +37,7 @@ const ProgressChart = ({start, end, total, progress}: ProgressChartProps) => {
             progressIndex += 1;
         }
         
-        const todaysProgress = progress[progressIndex].count;
+        const todaysProgress = progressIndex >= 0 ? progress[progressIndex].count : 0;
 
         const done = todaysProgress >= total && yesterdaysProgress >= total;
         
