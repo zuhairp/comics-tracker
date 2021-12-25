@@ -30,12 +30,12 @@ const Stats = ({start, end, total, read}: StatsProps) => {
         daysRemaining = Math.round(end.diff(start, 'days').days)
     } 
     else if (daysRemaining < 0) {
-        target = (read == total) ? "\u{1F389}" : "\u{1F622}";
+        target = (read >= total) ? "\u{1F389}" : "\u{1F622}";
         daysRemaining = 0;
     }
     else {
         let avg = total / totalDays;
-        target = Math.round((daysIn+1) * avg);
+        target = read < total ? Math.round((daysIn+1) * avg) : "\u{1F389}";
     }
 
     return (
