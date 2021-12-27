@@ -11,6 +11,7 @@ interface DataPoint {
     time: number;
     target: number;
     actual?: number;
+    projected?: number;
 }
 
 interface ProgressChartProps {
@@ -28,8 +29,16 @@ const ProgressChart = ({start, end, total, progress}: ProgressChartProps) => {
     let data: DataPoint[] = []
     let progressIndex = -1;
     let i = 0;
-    let today = DateTime.now();
+    let today = DateTime.now().set({hour: 0, minute: 0});
     let yesterdaysProgress = 0;
+
+    let actualPace = null;
+    if (today >= start && today <= end) {
+        const read = progress[progress.length - 1].count;
+        const days = Math.round(today.diff(start, 'days').days);
+        actualPace = read / (days + 1);
+    }
+
     for (let d = interval.start; d < interval.end; d = d.plus({days: 1}))
     {
         const time = d.valueOf();
@@ -40,13 +49,15 @@ const ProgressChart = ({start, end, total, progress}: ProgressChartProps) => {
         const todaysProgress = progressIndex >= 0 ? progress[progressIndex].count : 0;
 
         const done = todaysProgress >= total && yesterdaysProgress >= total;
+        const projected = Math.round(actualPace * (i+1))
         
         data.push({
             time,
             target: Math.round(pace * (i+1)),
             actual: d <= today && !done? 
                         progressIndex == -1 ? 0 : progress[progressIndex].count
-                        : null
+                        : null,
+            projected: projected <= total ? projected : null
         })
 
         i++;
@@ -87,6 +98,13 @@ const ProgressChart = ({start, end, total, progress}: ProgressChartProps) => {
                     stroke="#95ff75"
                     strokeWidth={2}
                     />
+                <Line 
+                    dataKey="projected" 
+                    dot={false}
+                    name="Projected"
+                    stroke="gray"
+                    strokeWidth={2}
+                    strokeDasharray="9 9"/>
                 <Tooltip 
                  labelFormatter = {tickFormatter}
                  contentStyle = {{
