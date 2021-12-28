@@ -89,7 +89,14 @@ const ProgressChart = ({start, end, total, progress}: ProgressChartProps) => {
                     name="Target"
                     stroke="white"
                     strokeWidth={2}
-                    strokeDasharray="9 9"/>
+                    strokeDasharray="7 7"/>
+                <Line 
+                    dataKey="projected" 
+                    dot={false}
+                    name="Projected"
+                    stroke="gray"
+                    strokeWidth={2}
+                    strokeDasharray="3 3"/>
                 <Line 
                     connectNulls
                     dataKey="actual" 
@@ -98,13 +105,6 @@ const ProgressChart = ({start, end, total, progress}: ProgressChartProps) => {
                     stroke="#95ff75"
                     strokeWidth={2}
                     />
-                <Line 
-                    dataKey="projected" 
-                    dot={false}
-                    name="Projected"
-                    stroke="gray"
-                    strokeWidth={2}
-                    strokeDasharray="9 9"/>
                 <Tooltip 
                  labelFormatter = {tickFormatter}
                  contentStyle = {{
