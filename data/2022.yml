@@ -54,3 +54,5 @@ progress:
     count: 321
   - date: 2022-01-22T00:00:00.000Z
     count: 332
+  - date: 2022-01-23T00:00:00.000Z
+    count: 341
