@@ -12,6 +12,7 @@ const SiteHeader = ({location}) => {
                     <span className="link"><Link to="/2021">2021</Link></span>
                     <span className="link"><Link to="/2022">2022</Link></span>
                     <span className="link"><Link to="/2023">2023</Link></span>
+                    <span className="link"><Link to="/2024">2024</Link></span>
                     <span className="link about"><Link to="/">About</Link></span>
                 </div>
             </div>

@@ -28,5 +28,8 @@ while True:
         text += "\n".join(rows)
         text += "\n"
 
-subprocess.run("pbcopy", universal_newlines=True, input=text)
+        subprocess.run("clip", universal_newlines=True, input=text)
+
+# subprocess.run("pbcopy", universal_newlines=True, input=text)
+subprocess.run("clip", universal_newlines=True, input=text)
 print("Table copied to clipboard")
