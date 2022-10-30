@@ -8,7 +8,7 @@ on:
 jobs:
   write_and_commit_job:
     runs-on: ubuntu-latest
-    name: "Update progress in 2022.yml"
+    name: "Update progress in 2023.yml"
     steps:
       - uses: actions/checkout@v2
         with:
@@ -19,7 +19,7 @@ jobs:
         run: |
           npm install js-yaml
           npm install luxon
-          node update-data.js 2022 ${{ github.event.client_payload.date }} ${{ github.event.client_payload.count }}
+          node update-data.js 2023 ${{ github.event.client_payload.date }} ${{ github.event.client_payload.count }}
 
       - name: Commit changes
         run: |
