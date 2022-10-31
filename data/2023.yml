@@ -6,3 +6,5 @@ total: 3878
 progress:
   - date: 2022-10-30T00:00:00.000Z
     count: 12
+  - date: 2022-10-31T00:00:00.000Z
+    count: 21
